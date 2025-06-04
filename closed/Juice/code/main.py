@@ -129,7 +129,10 @@ def main(main_args, system, load_config_fn=populate_config_registry):
                 workload_settings = legacy_config_ver_override(benchmark, scenario, main_args.get("config_ver"))
 
             for workload_setting in workload_settings:
-                config = ConfigRegistry.get(benchmark, scenario, system, **workload_setting.as_dict(), config_suffix=main_args.get("config_suffix", None))
+                try:
+                    config = ConfigRegistry.get(benchmark, scenario, system, **workload_setting.as_dict(), config_suffix=main_args.get("config_suffix", None))
+                except KeyError:
+                    config = None
                 if config is None:
                     logging.warning(f"No registered config for {benchmark.value.name}.{scenario.value.name}.{system_id} "
                                     f"for WorkloadSetting({workload_setting.shortname()})")
