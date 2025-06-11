@@ -44,4 +44,15 @@ COPY --from=common patches/ /tmp/patches
 COPY --from=common install_rgat_deps.sh .
 RUN if [ "$INSTALL_RGAT_DEPS" = "1" ]; then if [ -f install_rgat_deps.sh ]; then bash install_rgat_deps.sh; fi; fi
 
+# 7. Install Juice
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+	libatomic1 \
+	libnuma1
+COPY --from=common juice-gpu-linux.tar.gz /opt/
+ENV PATH /opt/juice-gpu:$PATH
+RUN mkdir -p /opt/juice-gpu && \
+	cd /opt/juice-gpu && \
+	tar -xzf ../juice-gpu-linux.tar.gz && \
+	rm ../juice-gpu-linux.tar.gz
+
 WORKDIR /work
