@@ -1,0 +1,133 @@
+[2025-06-03 21:46:57,396 main.py:237 INFO] Detected system ID: a4000x2
+[2025-06-03 21:46:57,418 generate_conf_files.py:107 INFO] Generated measurements/ entries for a4000x2_TRT/resnet50/Offline
+[2025-06-03 21:46:57,418 harness.py:355 INFO] Using harness launch command...
+[2025-06-03 21:46:57,418 __init__.py:46 INFO] Running command: ./build/bin/harness_default --logfile_outdir="/work/build/logs/2025.06.03-21.45.21/a4000x2_TRT/resnet50/Offline" --logfile_prefix="mlperf_log_" --performance_sample_count=2048 --gpu_copy_streams=2 --gpu_inference_streams=1 --run_infer_on_copy_streams=false --gpu_batch_size=256 --map_path="data_maps/imagenet/val_map.txt" --tensor_path="build/preprocessed_data/imagenet/ResNet50/int8_linear" --use_graphs=false --gpu_engine_batch_size="256" --gpu_engines="./build/engines/a4000x2/resnet50/Offline/resnet50-Offline-gpu-resnet50-b256-int8.lwis_k_99_MaxP.plan" --mlperf_conf_path="build/loadgen-configs/a4000x2_TRT/resnet50/Offline/mlperf.conf" --user_conf_path="build/loadgen-configs/a4000x2_TRT/resnet50/Offline/user.conf" --max_dlas=0 --scenario="Offline" --model="resnet50" --scenario Offline --model resnet50
+[2025-06-03 21:46:57,418 __init__.py:53 INFO] Overriding Environment
+benchmark : Benchmark.ResNet50
+buffer_manager_thread_count : 0
+data_dir : /home/charles/temp/mlcommons-inference-v5-scratch-space/data
+gpu_batch_size : 256
+gpu_copy_streams : 2
+gpu_inference_streams : 1
+input_dtype : int8
+input_format : linear
+log_dir : /work/build/logs/2025.06.03-21.45.21
+map_path : data_maps/imagenet/val_map.txt
+offline_expected_qps : 40000
+precision : int8
+preprocessed_data_dir : /home/charles/temp/mlcommons-inference-v5-scratch-space/preprocessed_data
+run_infer_on_copy_streams : False
+scenario : Scenario.Offline
+system : System(cpu=CPU(name='Intel(R) Xeon(R) w5-2465X', architecture=<CPUArchitecture.x86_64: AliasedName(name='x86_64', aliases=(), patterns=())>, vendor='GenuineIntel', cores_per_group=16, threads_per_core=2, n_groups=1, group_type=<GroupType.Socket: 'socket'>, numa_nodes=[[Interval(start=0, end=31)]], flags={'smep', 'nopl', 'xsave', 'aperfmperf', 'amx_int8', 'ds_cpl', 'sdbg', 'pbe', 'rdt_a', '3dnowprefetch', 'avx512vl', 'f16c', 'rdrand', 'x2apic', 'ibt', 'flush_l1d', 'dtes64', 'avx512_vnni', 'avx512dq', 'erms', 'fxsr', 'pdcm', 'cqm_mbm_local', 'pae', 'sse2', 'sse4_2', 'mce', 'ept_ad', 'pse36', 'xtpr', 'apic', 'cdp_l3', 'avx512bw', 'nx', 'arch_lbr', 'ssbd', 'intel_pt', 'clflush', 'tm2', 'hwp_act_window', 'arat', 'tsc_deadline_timer', 'pclmulqdq', 'cqm_llc', 'user_shstk', 'cldemote', 'smap', 'stibp', 'avx512_fp16', 'art', 'rdtscp', 'movdir64b', 'rep_good', 'xgetbv1', 'avx512_vbmi2', 'pku', 'arch_capabilities', 'est', 'avx512f', 'mba', 'ibrs', 'avx512_bf16', 'cqm_mbm_total', 'hwp_pkg_req', 'bmi1', 'monitor', 'movdiri', 'msr', 'bmi2', 'cat_l2', 'dtherm', 'ibpb', 'pcid', 'epb', 'ssse3', 'enqcmd', 'aes', 'serialize', 'xsaveopt', 'pconfig', 'avx512vbmi', 'waitpkg', 'avx2', 'lahf_lm', 'cdp_l2', 'arch_perfmon', 'lm', 'pln', 'amx_tile', 'ida', 'gfni', 'pse', 'split_lock_detect', 'cpuid_fault', 'xsaves', 'avx512ifma', 'fma', 'vnmi', 'ss', 'sha_ni', 'bts', 'abm', 'clwb', 'amx_bf16', 'xtopology', 'vpid', 'vmx', 'dts', 'fsgsbase', 'hwp', 'flexpriority', 'nonstop_tsc', 'vme', 'popcnt', 'pni', 'xsavec', 'smx', 'avx512_vpopcntdq', 'umip', 'cx8', 'movbe', 'wbnoinvd', 'cqm', 'tsc', 'mmx', 'pebs', 'ht', 'cpuid', 'ept', 'tsc_adjust', 'mca', 'rdpid', 'vpclmulqdq', 'dca', 'vaes', 'cmov', 'adx', 'tm', 'ibrs_enhanced', 'avx512_bitalg', 'syscall', 'fsrm', 'sep', 'tsc_known_freq', 'pdpe1gb', 'constant_tsc', 'la57', 'cx16', 'clflushopt', 'cqm_occup_llc', 'pat', 'avx512cd', 'invpcid', 'avx_vnni', 'tsxldtrk', 'hwp_epp', 'fpu', 'pge', 'tpr_shadow', 'ospke', 'de', 'rdseed', 'sse', 'intel_ppin', 'sse4_1', 'avx', 'acpi', 'md_clear', 'mtrr', 'pts', 'bus_lock_detect', 'cat_l3'}, vulnerabilities={'Spec store bypass': 'Mitigation; Speculative Store Bypass disabled via prctl', 'Spectre v1': 'Mitigation; usercopy/swapgs barriers and __user pointer sanitization', 'Spectre v2': 'Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S'}), host_memory=HostMemory(capacity=Memory(quantity=131.531648, byte_suffix=<ByteSuffix.GB: (1000, 3)>, _num_bytes=131531648000)), accelerators={<class 'nvmitten.nvidia.accelerator.GPU'>: [GPU(name='NVIDIA RTX A4000', pci_id='0x24B010DE', compute_sm=ComputeSM(major=8, minor=6), vram=Memory(quantity=15.71636962890625, byte_suffix=<ByteSuffix.GiB: (1024, 3)>, _num_bytes=16875323392), max_power_limit=140.0, is_integrated=False, gpu_index=0), GPU(name='NVIDIA RTX A4000', pci_id='0x24B010DE', compute_sm=ComputeSM(major=8, minor=6), vram=Memory(quantity=15.724365234375, byte_suffix=<ByteSuffix.GiB: (1024, 3)>, _num_bytes=16883908608), max_power_limit=140.0, is_integrated=False, gpu_index=1)], <class 'nvmitten.nvidia.accelerator.DLA'>: []}, extras={'id': 'a4000x2', 'tags': {'gpu_based', 'multi_gpu', 'is_ampere', 'custom'}, 'name': 'a4000x2', 'primary_compute_sm': ComputeSM(major=8, minor=6)})
+tensor_path : build/preprocessed_data/imagenet/ResNet50/int8_linear
+use_graphs : False
+system_id : a4000x2
+config_name : a4000x2_resnet50_Offline
+workload_setting : WorkloadSetting(HarnessType.LWIS, AccuracyTarget.k_99, PowerSetting.MaxP)
+optimization_level : plugin-enabled
+num_profiles : 2
+config_ver : lwis_k_99_MaxP
+accuracy_level : 99%
+inference_server : lwis
+skip_file_checks : False
+power_limit : None
+cpu_freq : None
+gpu_engine_batch_size : 256
+&&&& RUNNING Default_Harness # ./build/bin/harness_default
+[I] mlperf.conf path: build/loadgen-configs/a4000x2_TRT/resnet50/Offline/mlperf.conf
+[I] user.conf path: build/loadgen-configs/a4000x2_TRT/resnet50/Offline/user.conf
+Creating QSL.
+Finished Creating QSL.
+Setting up SUT.
+[I] [TRT] Loaded engine size: 31 MiB
+[I] Device:0.GPU: [0] ./build/engines/a4000x2/resnet50/Offline/resnet50-Offline-gpu-resnet50-b256-int8.lwis_k_99_MaxP.plan has been successfully loaded.
+[I] [TRT] Loaded engine size: 31 MiB
+[W] [TRT] Using an engine plan file across different models of devices is not recommended and is likely to affect performance or even cause errors.
+[I] Device:1.GPU: [0] ./build/engines/a4000x2/resnet50/Offline/resnet50-Offline-gpu-resnet50-b256-int8.lwis_k_99_MaxP.plan has been successfully loaded.
+[I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +392, now: CPU 0, GPU 431 (MiB)
+[I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +392, now: CPU 0, GPU 823 (MiB)
+[I] [TRT] Switching optimization profile from: 0 to 1. Please ensure there are no enqueued operations pending in this context prior to switching profiles
+[I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +392, now: CPU 0, GPU 1215 (MiB)
+[I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +392, now: CPU 0, GPU 1607 (MiB)
+[I] [TRT] Switching optimization profile from: 0 to 1. Please ensure there are no enqueued operations pending in this context prior to switching profiles
+[I] Creating batcher thread: 0 EnableBatcherThreadPerDevice: false
+Finished setting up SUT.
+Starting warmup. Running for a minimum of 5 seconds.
+Finished warmup. Ran for 5.44882s.
+Starting running actual test.
+================================================
+MLPerf Results Summary
+================================================
+SUT name : LWIS_Server
+Scenario : Offline
+Mode     : PerformanceOnly
+Samples per second: 21905.3
+Result is : VALID
+  Min duration satisfied : Yes
+  Min queries satisfied : Yes
+  Early stopping satisfied: Yes
+
+================================================
+Additional Stats
+================================================
+Min latency (ns)                : 208307336
+Max latency (ns)                : 1205187029493
+Mean latency (ns)               : 600571059453
+50.00 percentile latency (ns)   : 600648045140
+90.00 percentile latency (ns)   : 1084526014664
+95.00 percentile latency (ns)   : 1144813918117
+97.00 percentile latency (ns)   : 1168988493687
+99.00 percentile latency (ns)   : 1193138593190
+99.90 percentile latency (ns)   : 1203987392705
+
+================================================
+Test Parameters Used
+================================================
+samples_per_query : 26400000
+target_qps : 40000
+target_latency (ns): 0
+max_async_queries : 1
+min_duration (ms): 600000
+max_duration (ms): 0
+min_query_count : 1
+max_query_count : 0
+qsl_rng_seed : 6023615788873153749
+sample_index_rng_seed : 15036839855038426416
+schedule_rng_seed : 9933818062894767841
+accuracy_log_rng_seed : 0
+accuracy_log_probability : 0
+accuracy_log_sampling_target : 0
+print_timestamps : 0
+performance_issue_unique : 0
+performance_issue_same : 0
+performance_issue_same_index : 0
+performance_sample_count : 2048
+
+No warnings encountered during test.
+
+No errors encountered during test.
+Finished running actual test.
+Device Device:0.GPU processed:
+  51551 batches of size 256
+  Memcpy Calls: 0
+  PerSampleCudaMemcpy Calls: 0
+  BatchedCudaMemcpy Calls: 51551
+Device Device:1.GPU processed:
+  51574 batches of size 256
+  Memcpy Calls: 0
+  PerSampleCudaMemcpy Calls: 0
+  BatchedCudaMemcpy Calls: 51574
+&&&& PASSED Default_Harness # ./build/bin/harness_default
+[2025-06-03 22:07:12,107 run_harness.py:169 INFO] Result: result_samples_per_second: 21905.3, Result is VALID, 10-min runtime requirement met: True
+ 
+======================== Result summaries: ========================
+
+ a4000x2_TRT-lwis_k_99_MaxP-Offline:
+   resnet50:
+     performance: result_samples_per_second: 21905.3, Result is VALID, 10-min runtime requirement met: True
+ 
+
+======================== Extra Perf Stats: ========================
+
+ a4000x2_TRT-lwis_k_99_MaxP-Offline:
+    FileNotFoundError: Cannot find perf logs for a4000x2_TRT/resnet50/Offline at build/artifacts/closed/NVIDIA/results/a4000x2_TRT/resnet50/Offline/performance/run_1. Non-NVIDIA users ignore this. NVIDIA users run `make pull_artifacts_repo`.

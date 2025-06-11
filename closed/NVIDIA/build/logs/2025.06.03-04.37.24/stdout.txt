@@ -1,0 +1,64 @@
+[2025-06-03 04:37:30,852 main.py:237 INFO] Detected system ID: a4000x2
+[2025-06-03 04:37:30,871 generate_conf_files.py:107 INFO] Generated measurements/ entries for a4000x2_TRT/resnet50/Offline
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/code/main.py", line 239, in <module>
+    main(main_args, DETECTED_SYSTEM)
+  File "/work/code/main.py", line 144, in main
+    dispatch_action(main_args, config_dict, workload_setting)
+  File "/work/code/main.py", line 210, in dispatch_action
+    handler.run()
+  File "/work/code/actionhandler/base.py", line 81, in run
+    self.handle_failure()
+  File "/work/code/actionhandler/run_harness.py", line 199, in handle_failure
+    raise RuntimeError("Run harness failed!")
+RuntimeError: Run harness failed!
+assume_contiguous : False
+benchmark : Benchmark.ResNet50
+buffer_manager_thread_count : 0
+complete_threads : 0
+data_dir : /home/charles/temp/mlcommons-inference-v5-scratch-space/data
+disable_beta1_smallk : False
+engine_dir : 
+gpu_copy_streams : 2
+gpu_inference_streams : 1
+input_dtype : int8
+input_format : linear
+log_dir : /work/build/logs/2025.06.03-04.37.24
+map_path : data_maps/imagenet/val_map.txt
+offline_expected_qps : 90000
+precision : int8
+preprocessed_data_dir : /home/charles/temp/mlcommons-inference-v5-scratch-space/preprocessed_data
+run_infer_on_copy_streams : False
+scenario : Scenario.Offline
+system : System(cpu=CPU(name='Intel(R) Xeon(R) w5-2465X', architecture=<CPUArchitecture.x86_64: AliasedName(name='x86_64', aliases=(), patterns=())>, vendor='GenuineIntel', cores_per_group=16, threads_per_core=2, n_groups=1, group_type=<GroupType.Socket: 'socket'>, numa_nodes=[[Interval(start=0, end=31)]], flags={'arch_perfmon', 'fsrm', 'invpcid', 'epb', 'cqm_llc', 'sep', 'hwp_act_window', 'clflushopt', 'est', 'pbe', 'ibrs_enhanced', 'umip', 'tpr_shadow', 'movdir64b', 'avx512cd', 'ospke', 'pse36', 'wbnoinvd', 'pni', 'vmx', 'avx512dq', 'amx_tile', 'de', 'adx', 'movdiri', 'lahf_lm', 'cdp_l2', 'tm2', 'ida', 'cqm_mbm_total', 'rdrand', 'tsc_known_freq', 'tm', 'pat', 'sse', 'aperfmperf', 'hwp', 'cx8', 'pebs', 'nopl', 'cdp_l3', 'amx_bf16', 'erms', 'flush_l1d', 'pts', 'cx16', 'sha_ni', 'pdcm', 'tsxldtrk', 'avx512bw', 'apic', 'waitpkg', 'pdpe1gb', 'serialize', 'dts', 'abm', 'msr', 'ibrs', 'acpi', 'vpid', 'vaes', 'dtherm', 'fma', 'movbe', 'f16c', 'nx', 'mmx', 'aes', 'lm', 'monitor', 'cqm_mbm_local', 'avx', 'avx512_vpopcntdq', 'sse4_2', '3dnowprefetch', 'rdpid', 'rep_good', 'cat_l2', 'avx512vl', 'avx_vnni', 'ept_ad', 'mce', 'amx_int8', 'xsave', 'fpu', 'nonstop_tsc', 'hwp_pkg_req', 'arch_capabilities', 'clflush', 'pae', 'xsaves', 'pku', 'avx512ifma', 'rdtscp', 'bmi2', 'pln', 'flexpriority', 'bus_lock_detect', 'rdt_a', 'user_shstk', 'cpuid', 'mca', 'md_clear', 'mtrr', 'xtpr', 'vnmi', 'arch_lbr', 'sse4_1', 'pge', 'pse', 'clwb', 'stibp', 'avx2', 'fsgsbase', 'ibt', 'cqm', 'smx', 'hwp_epp', 'sse2', 'smep', 'avx512_bf16', 'tsc_deadline_timer', 'avx512f', 'xsaveopt', 'x2apic', 'ssse3', 'bmi1', 'gfni', 'cat_l3', 'intel_ppin', 'ibpb', 'art', 'pclmulqdq', 'ht', 'xgetbv1', 'cmov', 'constant_tsc', 'avx512_bitalg', 'pconfig', 'ssbd', 'rdseed', 'dca', 'syscall', 'cqm_occup_llc', 'tsc', 'dtes64', 'la57', 'cldemote', 'enqcmd', 'ss', 'ds_cpl', 'split_lock_detect', 'avx512_fp16', 'fxsr', 'arat', 'pcid', 'vpclmulqdq', 'bts', 'ept', 'tsc_adjust', 'vme', 'intel_pt', 'popcnt', 'xsavec', 'mba', 'avx512_vbmi2', 'cpuid_fault', 'avx512vbmi', 'smap', 'avx512_vnni', 'xtopology', 'sdbg'}, vulnerabilities={'Spec store bypass': 'Mitigation; Speculative Store Bypass disabled via prctl', 'Spectre v1': 'Mitigation; usercopy/swapgs barriers and __user pointer sanitization', 'Spectre v2': 'Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S'}), host_memory=HostMemory(capacity=Memory(quantity=131.53166399999998, byte_suffix=<ByteSuffix.GB: (1000, 3)>, _num_bytes=131531664000)), accelerators={<class 'nvmitten.nvidia.accelerator.GPU'>: [GPU(name='NVIDIA RTX A4000', pci_id='0x24B010DE', compute_sm=ComputeSM(major=8, minor=6), vram=Memory(quantity=15.71636962890625, byte_suffix=<ByteSuffix.GiB: (1024, 3)>, _num_bytes=16875323392), max_power_limit=140.0, is_integrated=False, gpu_index=0), GPU(name='NVIDIA RTX A4000', pci_id='0x24B010DE', compute_sm=ComputeSM(major=8, minor=6), vram=Memory(quantity=15.724365234375, byte_suffix=<ByteSuffix.GiB: (1024, 3)>, _num_bytes=16883908608), max_power_limit=140.0, is_integrated=False, gpu_index=1)], <class 'nvmitten.nvidia.accelerator.DLA'>: []}, extras={'id': 'a4000x2', 'tags': {'custom', 'multi_gpu', 'is_ampere', 'gpu_based'}, 'name': 'a4000x2', 'primary_compute_sm': ComputeSM(major=8, minor=6)})
+tensor_path : build/preprocessed_data/imagenet/ResNet50/int8_linear
+use_batcher_thread_per_device : False
+use_cuda_thread_per_device : False
+use_deque_limit : False
+use_graphs : False
+use_same_context : False
+vboost_slider : 0
+warmup_duration : 0.0
+system_id : a4000x2
+config_name : a4000x2_resnet50_Offline
+workload_setting : WorkloadSetting(HarnessType.LWIS, AccuracyTarget.k_99, PowerSetting.MaxP)
+optimization_level : plugin-enabled
+num_profiles : 2
+config_ver : lwis_k_99_MaxP
+accuracy_level : 99%
+inference_server : lwis
+skip_file_checks : False
+power_limit : None
+cpu_freq : None
+Traceback (most recent call last):
+  File "/work/code/actionhandler/run_harness.py", line 164, in handle
+    result_data = self.harness.run_harness(flag_dict=self.harness_flag_dict, skip_generate_measurements=True, use_py_harness=self.use_py_harness)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/common/harness.py", line 338, in run_harness
+    argstr = self._build_custom_flags(flag_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/common/lwis_harness.py", line 48, in _build_custom_flags
+    raise ValueError("Cannot specify --no_gpu and --gpu_only at the same time")
+ValueError: Cannot specify --no_gpu and --gpu_only at the same time

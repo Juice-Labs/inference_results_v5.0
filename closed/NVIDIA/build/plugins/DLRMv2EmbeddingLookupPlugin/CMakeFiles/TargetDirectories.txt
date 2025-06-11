@@ -1,0 +1,3 @@
+/work/build/plugins/DLRMv2EmbeddingLookupPlugin/CMakeFiles/dlrmv2embeddinglookupplugin.dir
+/work/build/plugins/DLRMv2EmbeddingLookupPlugin/CMakeFiles/edit_cache.dir
+/work/build/plugins/DLRMv2EmbeddingLookupPlugin/CMakeFiles/rebuild_cache.dir

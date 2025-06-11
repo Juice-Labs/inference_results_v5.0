@@ -1,0 +1,3 @@
+/work/build/plugins/pixelShuffle3DPlugin/CMakeFiles/pixelshuffle3dplugin.dir
+/work/build/plugins/pixelShuffle3DPlugin/CMakeFiles/edit_cache.dir
+/work/build/plugins/pixelShuffle3DPlugin/CMakeFiles/rebuild_cache.dir

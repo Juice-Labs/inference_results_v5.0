@@ -1,0 +1,3 @@
+/work/build/plugins/conv3D1X1X1K4Plugin/CMakeFiles/conv3D1X1X1K4Plugin.dir
+/work/build/plugins/conv3D1X1X1K4Plugin/CMakeFiles/edit_cache.dir
+/work/build/plugins/conv3D1X1X1K4Plugin/CMakeFiles/rebuild_cache.dir

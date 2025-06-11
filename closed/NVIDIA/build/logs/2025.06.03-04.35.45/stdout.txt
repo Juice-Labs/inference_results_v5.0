@@ -1,0 +1,28 @@
+[2025-06-03 04:35:52,242 main.py:237 INFO] Detected system ID: a4000x2
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/code/main.py", line 239, in <module>
+    main(main_args, DETECTED_SYSTEM)
+  File "/work/code/main.py", line 144, in main
+    dispatch_action(main_args, config_dict, workload_setting)
+  File "/work/code/main.py", line 210, in dispatch_action
+    handler.run()
+  File "/work/code/actionhandler/base.py", line 74, in run
+    self.setup()
+  File "/work/code/actionhandler/run_harness.py", line 85, in setup
+    duper.run()
+  File "/work/code/common/protected_super.py", line 137, in _f
+    return r(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/work/code/actionhandler/base.py", line 74, in run
+    self.setup()
+  File "/work/code/actionhandler/generate_conf_files.py", line 71, in setup
+    self.harness_flag_dict = self.harness.build_non_custom_flags()
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/common/harness.py", line 294, in build_non_custom_flags
+    flag_dict.update(self.build_scenario_specific_flags())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/code/common/harness.py", line 279, in build_scenario_specific_flags
+    raise ValueError("Missing required key {:}".format(arg))
+ValueError: Missing required key offline_expected_qps

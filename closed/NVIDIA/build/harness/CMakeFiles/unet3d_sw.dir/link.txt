@@ -1,0 +1,2 @@
+/usr/bin/ar qc lwis_3dunet/libunet3d_sw.a CMakeFiles/unet3d_sw.dir/harness_3dunet/lwis_3dunet.cpp.o CMakeFiles/unet3d_sw.dir/harness_3dunet/unet3d_sw.cu.o
+/usr/bin/ranlib lwis_3dunet/libunet3d_sw.a
