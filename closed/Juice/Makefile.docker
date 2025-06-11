@@ -98,15 +98,9 @@ ifdef CCACHE_DIR
     DOCKER_ENV_VAR += -e CCACHE_DIR=/home/$(UNAME)/.ccache
 endif
 
-# Handle different nvidia-docker version. Do not use nvidia-docker when running with CPUs
-ifneq ($(wildcard /usr/bin/nvidia-docker),)
-    DOCKER_RUN_CMD := nvidia-docker run
-    # Set Environment variables to fix docker client and server version mismatch
-    # Related issue: https://github.com/kubernetes-sigs/kubespray/issues/6160
-    export DOCKER_API_VERSION=1.40
-else
-    DOCKER_RUN_CMD := docker run --runtime=nvidia
-endif
+# Use normal "docker run" to launch the Docker container as Juice GPUs
+# are attached dynamically, as needed, at runtime.
+DOCKER_RUN_CMD := docker run
 
 # If specific DOCKER_COMMAND is not passed, launch interactive docker container session.
 ifeq ($(DOCKER_COMMAND),)
@@ -252,7 +246,6 @@ launch_docker:
 		--user $(UID) --net host --device /dev/fuse \
 		$(DOCKER_MOUNTS) $(DOCKER_ARGS) \
 		$(DOCKER_ENV_VAR) \
-		$(shell if [ -n "$$MIG_CONF" ] && [ "$$MIG_CONF" = "ALL" ]; then echo "--gpus all -e NVIDIA_MIG_CONFIG_DEVICES=all"; elif [ -n "$$MIG_CONF" ] && [ "$$MIG_CONF" != "OFF" ]; then echo "--gpus '\"device=`bash scripts/mig_get_uuid.sh`\"'"; fi) \
 		mlperf-inference:$(DOCKER_TAG) $(DOCKER_COMMAND)
 
 endif # ifndef MAKEFILE_DOCKER_INCLUDED
