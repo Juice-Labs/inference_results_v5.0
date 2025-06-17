@@ -4,7 +4,7 @@
     "data": {
       "_component_module": "nvmitten.system.system",
       "_component_classname": "System",
-      "_match_ignore_fields": [],
+      "_match_ignore_fields": ["host_memory"],
       "fields": {
         "cpu": {
           "__obj_class__": "<class 'nvmitten.system.component.Description'>",
